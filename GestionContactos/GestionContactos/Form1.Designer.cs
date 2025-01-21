@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnModificarContacto = new Button();
             btnBorrarContacto = new Button();
             btnAñadirContacto = new Button();
-            btnModificarContacto = new Button();
+            btnMostrarContactos = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnMostrarContactos);
             groupBox1.Controls.Add(btnModificarContacto);
             groupBox1.Controls.Add(btnBorrarContacto);
             groupBox1.Controls.Add(btnAñadirContacto);
@@ -46,6 +48,16 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            // 
+            // btnModificarContacto
+            // 
+            btnModificarContacto.Location = new Point(6, 157);
+            btnModificarContacto.Name = "btnModificarContacto";
+            btnModificarContacto.Size = new Size(238, 35);
+            btnModificarContacto.TabIndex = 1;
+            btnModificarContacto.Text = "Modificar contacto";
+            btnModificarContacto.UseVisualStyleBackColor = true;
+            btnModificarContacto.Click += btnModificarContacto_Click;
             // 
             // btnBorrarContacto
             // 
@@ -67,15 +79,15 @@
             btnAñadirContacto.UseVisualStyleBackColor = true;
             btnAñadirContacto.Click += btnAñadirContacto_Click;
             // 
-            // btnModificarContacto
+            // btnMostrarContactos
             // 
-            btnModificarContacto.Location = new Point(6, 157);
-            btnModificarContacto.Name = "btnModificarContacto";
-            btnModificarContacto.Size = new Size(238, 35);
-            btnModificarContacto.TabIndex = 1;
-            btnModificarContacto.Text = "Modificar contacto";
-            btnModificarContacto.UseVisualStyleBackColor = true;
-            btnModificarContacto.Click += btnModificarContacto_Click;
+            btnMostrarContactos.Location = new Point(6, 208);
+            btnMostrarContactos.Name = "btnMostrarContactos";
+            btnMostrarContactos.Size = new Size(238, 32);
+            btnMostrarContactos.TabIndex = 3;
+            btnMostrarContactos.Text = "Mostrar contactos";
+            btnMostrarContactos.UseVisualStyleBackColor = true;
+            btnMostrarContactos.Click += btnMostrarContactos_Click;
             // 
             // Form1
             // 
@@ -95,5 +107,6 @@
         private Button btnAñadirContacto;
         private Button btnBorrarContacto;
         private Button btnModificarContacto;
+        private Button btnMostrarContactos;
     }
 }

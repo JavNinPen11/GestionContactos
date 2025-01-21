@@ -74,7 +74,7 @@ namespace GestionContactos
         {
             bool existe = false;
             int posicion = 0;
-            for (int i = 0;i < telefono.Length && existe == false; i++)
+            for (int i = 0; i < telefono.Length && existe == false; i++)
             {
                 if (telefonos[i] == telefono)
                 {
@@ -88,6 +88,21 @@ namespace GestionContactos
         {
             nombres[posicion] = nombre;
             telefonos[posicion] = telefono;
+        }
+        public (string, string) MostrarContactos()
+        {
+            string cadenaNombres = string.Empty;
+            string cadenaTelefonos = string.Empty;
+            for (int i = 0; i < TamañoMaximo; i++)
+            {
+               if (nombres[i] != null)
+                {
+                    cadenaNombres += nombres[i] + ", ";
+                    cadenaTelefonos += telefonos[i] + ", ";
+                }
+            }
+
+            return (cadenaNombres, cadenaTelefonos);
         }
         private void btnAñadirContacto_Click(object sender, EventArgs e)
         {
@@ -135,6 +150,15 @@ namespace GestionContactos
             {
                 MessageBox.Show("El numero introducido no existe");
             }
+        }
+
+        private void btnMostrarContactos_Click(object sender, EventArgs e)
+        {
+            string cadenaNombres;
+            string cadenaTelefonos;
+            (cadenaNombres, cadenaTelefonos) = MostrarContactos();
+            MessageBox.Show($"Los nombres y telefonos de los contactos son : \n" +
+                $"{cadenaNombres} \n{cadenaTelefonos}");
         }
     }
 }
