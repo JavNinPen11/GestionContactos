@@ -28,12 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            groupBox1 = new GroupBox();
+            btnAñadirContacto = new Button();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnAñadirContacto);
+            groupBox1.Location = new Point(40, 43);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(250, 341);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
+            // btnAñadirContacto
+            // 
+            btnAñadirContacto.Location = new Point(6, 40);
+            btnAñadirContacto.Name = "btnAñadirContacto";
+            btnAñadirContacto.Size = new Size(238, 36);
+            btnAñadirContacto.TabIndex = 1;
+            btnAñadirContacto.Text = "Añadir Contacto";
+            btnAñadirContacto.UseVisualStyleBackColor = true;
+            btnAñadirContacto.Click += btnAñadirContacto_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(352, 450);
+            Controls.Add(groupBox1);
+            Name = "Form1";
+            Text = "Form1";
+            groupBox1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private GroupBox groupBox1;
+        private Button btnAñadirContacto;
     }
 }
