@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnBorrarContacto = new Button();
             btnAñadirContacto = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnBorrarContacto);
             groupBox1.Controls.Add(btnAñadirContacto);
             groupBox1.Location = new Point(40, 43);
             groupBox1.Name = "groupBox1";
@@ -42,6 +44,16 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            // 
+            // btnBorrarContacto
+            // 
+            btnBorrarContacto.Location = new Point(6, 101);
+            btnBorrarContacto.Name = "btnBorrarContacto";
+            btnBorrarContacto.Size = new Size(238, 39);
+            btnBorrarContacto.TabIndex = 2;
+            btnBorrarContacto.Text = "Borrar contacto";
+            btnBorrarContacto.UseVisualStyleBackColor = true;
+            btnBorrarContacto.Click += btnBorrarContacto_Click;
             // 
             // btnAñadirContacto
             // 
@@ -69,5 +81,6 @@
 
         private GroupBox groupBox1;
         private Button btnAñadirContacto;
+        private Button btnBorrarContacto;
     }
 }
