@@ -31,11 +31,13 @@
             groupBox1 = new GroupBox();
             btnBorrarContacto = new Button();
             btnAñadirContacto = new Button();
+            btnModificarContacto = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnModificarContacto);
             groupBox1.Controls.Add(btnBorrarContacto);
             groupBox1.Controls.Add(btnAñadirContacto);
             groupBox1.Location = new Point(40, 43);
@@ -65,6 +67,16 @@
             btnAñadirContacto.UseVisualStyleBackColor = true;
             btnAñadirContacto.Click += btnAñadirContacto_Click;
             // 
+            // btnModificarContacto
+            // 
+            btnModificarContacto.Location = new Point(6, 157);
+            btnModificarContacto.Name = "btnModificarContacto";
+            btnModificarContacto.Size = new Size(238, 35);
+            btnModificarContacto.TabIndex = 1;
+            btnModificarContacto.Text = "Modificar contacto";
+            btnModificarContacto.UseVisualStyleBackColor = true;
+            btnModificarContacto.Click += btnModificarContacto_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -82,5 +94,6 @@
         private GroupBox groupBox1;
         private Button btnAñadirContacto;
         private Button btnBorrarContacto;
+        private Button btnModificarContacto;
     }
 }

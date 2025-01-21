@@ -70,7 +70,25 @@ namespace GestionContactos
 
             return existe;
         }
-
+        public (bool, int) VerificarTelefono(string telefono)
+        {
+            bool existe = false;
+            int posicion = 0;
+            for (int i = 0;i < telefono.Length && existe == false; i++)
+            {
+                if (telefonos[i] == telefono)
+                {
+                    existe = true;
+                    posicion = i;
+                }
+            }
+            return (existe, posicion);
+        }
+        public void ModificarContacto(string nombre, string telefono, int posicion)
+        {
+            nombres[posicion] = nombre;
+            telefonos[posicion] = telefono;
+        }
         private void btnAñadirContacto_Click(object sender, EventArgs e)
         {
             string nombre = Interaction.InputBox("Ingrese el nombre del contacto");
@@ -97,6 +115,25 @@ namespace GestionContactos
             else
             {
                 MessageBox.Show("No se han eliminado los datos");
+            }
+        }
+
+        private void btnModificarContacto_Click(object sender, EventArgs e)
+        {
+            string telefono = Interaction.InputBox("Ingrese el telefono del contacto a editar");
+            bool existe;
+            int posicion;
+            (existe, posicion) = VerificarTelefono(telefono);
+            if (existe)
+            {
+                string nombre = Interaction.InputBox("Ingrese el nombre nuevo");
+                telefono = Interaction.InputBox("Ingrese el telefono nuevo");
+                ModificarContacto(nombre, telefono, posicion);
+                MessageBox.Show("Se ha modificado satisfactoriamente");
+            }
+            else
+            {
+                MessageBox.Show("El numero introducido no existe");
             }
         }
     }
