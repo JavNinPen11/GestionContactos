@@ -10,8 +10,8 @@ namespace GestionContactos
             InitializeComponent();
         }
         const int TamañoMaximo = 10;
-        string[] nombres = new string[TamañoMaximo];
-        string[] telefonos = new string[TamañoMaximo];
+        string?[] nombres = new string[TamañoMaximo];
+        string?[] telefonos = new string[TamañoMaximo];
 
         public bool VerificarContacto(string telefono)
         {
@@ -49,7 +49,6 @@ namespace GestionContactos
 
 
         }
-
         public bool BorrarContacto(string telefono)
         {
             bool existe = false;
@@ -109,14 +108,23 @@ namespace GestionContactos
             string nombre = Interaction.InputBox("Ingrese el nombre del contacto");
             string telefono = Interaction.InputBox("Ingrese el telefono del contacto");
 
-            if (AñadirContacto(nombre, telefono))
+            if (telefonos[telefonos.Length - 1] != null)
             {
-                MessageBox.Show("Se han introducido los datos satisfactoriamente");
+                if (AñadirContacto(nombre, telefono))
+                {
+                    MessageBox.Show("Se han introducido los datos satisfactoriamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se han introducido los datos satisfactoriamente");
+                }
             }
             else
             {
-                MessageBox.Show("No se han introducido los datos satisfactoriamente");
+                MessageBox.Show("La lista de contactos ya ha sido llenada por completo\nElimine un contacto antes de " +
+                    "añadir uno más");
             }
+            
         }
 
         private void btnBorrarContacto_Click(object sender, EventArgs e)
