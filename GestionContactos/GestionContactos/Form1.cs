@@ -1,11 +1,11 @@
 using Microsoft.VisualBasic;
-using System.Reflection.Metadata;
 
 namespace GestionContactos
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1() 
+
         {
             InitializeComponent();
         }
@@ -108,7 +108,7 @@ namespace GestionContactos
             string nombre = Interaction.InputBox("Ingrese el nombre del contacto");
             string telefono = Interaction.InputBox("Ingrese el telefono del contacto");
 
-            if (telefonos[telefonos.Length - 1] != null)
+            if (telefonos[telefonos.Length - 1] == null)
             {
                 if (AñadirContacto(nombre, telefono))
                 {
